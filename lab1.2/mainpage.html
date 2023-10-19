@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Language" content="pl" />
+	<meta name="Author" content="Michal Kownacki" />
+	<title>Filmy Oscarowe</title>
+	<link rel="stylesheet" href="stajle.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body style="background-color:DarkGoldenRod;">
+	<table class="nav">
+		<tr class="nav-buttons">
+		  <th><a href="mainpage.html">Strona Główna</a></th>
+		  <th><a href="oscar.html">Czym jest Oscar?</a></th>
+		  <th><a href="galeria.html">Galeria</a></th>
+		  <th><a href="funoscar.html">Fun facts</a></th>
+		  <th><a href="kontakt.html">Kontakt</a></th>
+		</tr>
+	</table>
+	<div class="title">
+		<h1>Filmy Oscarowe</h1>
+	</div>
+	<img class="statue1" src="images/oskar.png">
+	<img class="statue2" src="images/oskar.png">
+	<p class="opis">Witaj na stronie poświęconej filmom oscarowych, a szczególnie tym, które zostały nagrodzone po roku 2000. Sama ceremonia wręczenia nagrody przyciąga uwagę wielu filmowych entuzjastów na całym świecie przed telewizory. Na tej stronie przedstawię trochę historii o tej nagrodzie oraz wybiorę parę filmów, które bym polecił lub też nie.</p>
+	<div id="animacjaTestowa1" class="test-block">kliknij, a się powiększe</div>
+	<div id="animacjaTestowa2" class="test-block">Najedz kursorem, a sie powieksze</div>
+	<div id="animacjaTestowa3" class="test-block">Clicker</div>
+	
+	<script>
+		$("#animacjaTestowa1").on("click", function(){
+			$(this).animate({
+				width: "500px",
+				opacity: 0.4,
+				fontsize: "3em",
+				borderWidth: "10px"
+			},1500);
+		});
+		
+		$("#animacjaTestowa2").on({
+			"mouseover" : function(){
+				$(this).animate({
+					width: 300
+				}, 800);
+			},
+			"mouseout" : function() {
+				$(this).animate({
+					width:200
+				}, 800);
+			}
+		});
+		
+		$("#animacjaTestowa3").on("click", function(){
+			if (!$(this).is(":animated")){
+				$(this).animate({
+					width: "+=" + 100,
+					height: "+=" + 10,
+					opacity: "-=" + 0.1,
+					duration : 3000 // deklaracja czasu trwania animacji
+				});
+			}
+		});
+		
+		
+		
+	</script>
+</body>
+</html>
