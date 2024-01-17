@@ -1,0 +1,57 @@
+<img class="statue1" src="images/oskar.png">
+<img class="statue2" src="images/oskar.png">
+<p class="opis">Witaj na stronie poświęconej filmom oscarowych, a szczególnie tym, które zostały nagrodzone po roku 2000. Sama ceremonia wręczenia nagrody przyciąga uwagę wielu filmowych entuzjastów na całym świecie przed telewizory. Na tej stronie przedstawię trochę historii o tej nagrodzie oraz wybiorę parę filmów, które bym polecił lub też nie.</p><br>
+	<form method="post" name="background">
+		<input type="button" value="żółty" onclick="changeBackground('#FFF000')">
+		<input type="button" value="czarny" onclick="changeBackground('#000000')">
+		<input type="button" value="biały" onclick="changeBackground('#FFFFFF')">
+		<input type="button" value="zielony" onclick="changeBackground('#00FF00')">
+		<input type="button" value="niebieski" onclick="changeBackground('#0000FF')">
+		<input type="button" value="pomaranczowy" onclick="changeBackground('#FF8000')">
+		<input type="button" value="szary" onclick="changeBackground('#c0c0c0')">
+		<input type="button" value="czerwony" onclick="changeBackground('#FF0000')">
+	</form>
+<div id="zegarek"></div>
+<div id="data"></div>
+<br>
+
+<div id="animacjaTestowa1" class="test-block">Kliknij, a się powiększe</div>
+<script>
+	$("#animacjaTestowa1").on("click", function(){
+		$(this).animate({
+		width: "500px",
+		opacity: 0.4,
+		fontsize: "3em",
+		borderwith: "10px"
+		}, 1500);
+		});
+</script>
+
+<div id="animacjaTestowa2" class="test-block">Najedź kursorem, a się powiększe</div>
+<script>
+	$("#animacjaTestowa2").on({
+		"mouseover" : function() {
+			$(this).animate({
+				width: 300
+				}, 800);
+		},
+		"mouseout" : function() {
+			$(this).animate({
+				width: 200
+			}, 800);
+		}
+	});
+</script>
+
+<div id="animacjaTestowa3" class="test-block">Kliknij, abym urósł</div>
+<script>
+	$("#animacjaTestowa3").on("click", function(){
+		if(!$(this).is(":animated")){
+			$(this).animate({
+				width: "+=50",
+				height: "+=10",
+				opacity: "-=0.1",
+			}, 3000);
+		}
+	});		
+</script>
